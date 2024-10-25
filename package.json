@@ -12,8 +12,8 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "@mui/icons-material": "^5.x.x",
-    "@mui/material": "^5.x.x",
+    "@mui/icons-material": "5.14.18",
+    "@mui/material": "5.14.18",
     "axios": "^1.7.5",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
