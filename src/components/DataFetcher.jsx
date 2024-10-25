@@ -52,29 +52,13 @@ function DataFetcher() {
   };
 
   useEffect(() => {
+    localStorage.removeItem("weatherData");
+    localStorage.removeItem("weatherDataTime");
     const fetchData = async () => {
       try {
-        const cachedData = localStorage.getItem("weatherData");
-        const cachedTime = localStorage.getItem("weatherDataTime");
-
-        // Check if we have cached data and it's less than 1 hour old
-        if (
-          cachedData &&
-          cachedTime &&
-          Date.now() - parseInt(cachedTime) < 3600000
-        ) {
-          setWeatherData(JSON.parse(cachedData));
-          setLoading(false);
-          return;
-        }
-
         const data = await fetchWithRetry();
         setWeatherData(data);
         setLoading(false);
-
-        // Cache the new data
-        localStorage.setItem("weatherData", JSON.stringify(data));
-        localStorage.setItem("weatherDataTime", Date.now().toString());
       } catch (error) {
         console.error("Error fetching weather data:", error);
         setError("Failed to fetch weather data. Using fallback data.");
