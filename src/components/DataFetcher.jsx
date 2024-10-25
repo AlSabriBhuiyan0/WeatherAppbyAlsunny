@@ -10,9 +10,7 @@ import "../assets/styles/index.css";
 
 // Fallback data in case of API failure
 const fallbackData = {
-  // Add some mock weather data here
-  // This is just an example, adjust according to your needs
-  location: { name: "Kathmandu", localtime: "2024-01-01 12:00" },
+  location: { name: "Dhaka", localtime: "2024-01-01 12:00" },
   current: {
     temp_c: 20,
     condition: {
