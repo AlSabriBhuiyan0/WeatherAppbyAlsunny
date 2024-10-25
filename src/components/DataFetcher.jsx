@@ -41,7 +41,7 @@ function DataFetcher() {
       const response = await axios.get(
         `https://api.weatherapi.com/v1/forecast.json?key=${
           import.meta.env.VITE_WEATHER_API_KEY
-        }&q=Kathmandu&days=3&aqi=no&alerts=no`
+        }&q=Dhaka&days=3&aqi=no&alerts=no`
       );
       return response.data;
     } catch (error) {
